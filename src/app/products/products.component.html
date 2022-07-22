@@ -1,0 +1,35 @@
+
+<h2>Table of Products</h2>
+
+<app-product-search></app-product-search>
+<app-data-filter [gotColors]="gotColors" [productColors]="productColors" (messageEvent)="receiveMessage($event)"></app-data-filter>
+
+<table id="products" style="width: 100%; padding: 10px 1vw">
+  <thead>
+    <tr>
+      <th style="width: 60%; text-align: left;">Name</th>
+      <th style="width: 10%; text-align: left;">Color</th>
+      <th style="width: 10%; text-align: left;">Type</th>
+      <th style="width: 10%; text-align: left;">Cost</th>
+      <th style="width: 10%; text-align: left;">Manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let product of products"> -->
+    <tr *ngFor="let product of products | paginate: { itemsPerPage: count, currentPage: p }">
+      <td style="width: 60%">{{product.name}}</td>
+      <td style="width: 10%">{{product.color}}</td>
+      <td style="width: 10%">{{product.type}}</td>
+      <td style="width: 10%">{{product.price | currency}}</td>
+      <td style="width: 10%">
+        <button type="button" routerLink="/product-detail/{{product.sku}}">Edit</button>
+        <button type="button" (click)="delete(product)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--Include pagination control.-->
+<div class="text-right">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

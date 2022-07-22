@@ -1,0 +1,10 @@
+
+.products button:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.products button.selected {
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,14 @@
+
+.product-details__container {
+    margin-bottom: 2rem;
+}
+
+/* Style product details - individual details */
+.product-details__container__detail:not(:last-child) {
+  margin-bottom:  1rem;
+}
+
+input,
+textarea {
+  width: 200px;
+}

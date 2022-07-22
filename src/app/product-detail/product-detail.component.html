@@ -1,0 +1,33 @@
+
+<div *ngIf="product">
+  <h2>{{product.name | uppercase}}</h2>
+  <div class="product-details__container">
+    <div class="product-details__container__detail">
+      <label for="product-name">Name: </label>
+      <input id="product-name" [(ngModel)]="product.name" placeholder="name">
+    </div>
+    <div class="product-details__container__detail">
+      <label for="product-type">Type: </label>
+      <input id="product-type" [(ngModel)]="product.type" placeholder="type" maxlength="56">
+    </div>
+    <div class="product-details__container__detail">
+      <label for="product-description">Description: </label>
+      <textarea id="product-description" [(ngModel)]="product.description" placeholder="description" maxlength="56"></textarea>
+    </div>
+    <div class="product-details__container__detail">
+      <label for="product-color">Color: </label>
+      <input id="product-color" [(ngModel)]="product.color" placeholder="color" maxlength="56">
+    </div>
+    <div class="product-details__container__detail">
+      <label for="product-price">Price: </label>
+      <input id="product-price" [(ngModel)]="product.price" placeholder="price" type="number" min="0"
+      onkeypress="return (event.charCode !=8 && event.charCode ==0 || event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57))">
+    </div>
+  </div>
+
+  <div class="product-buttons">
+    <button type="button" (click)="goBack()">Back</button>
+    <button type="button" (click)="save()">Update</button>
+  </div>
+
+</div>

@@ -1,0 +1,12 @@
+
+<div id="product-colors-filter">
+  <h3>Product Color Filters: </h3>
+  <section>
+    <div>
+      <span *ngFor="let colorOption of colorOptions">
+        <input type="checkbox" [(ngModel)]="colorOption.checked" 
+         (change)="updateColorFilter(colorOption.color, $event)">{{ colorOption.color | titlecase }}
+      </span>
+    </div>
+  </section>
+</div>

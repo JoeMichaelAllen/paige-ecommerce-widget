@@ -1,0 +1,14 @@
+
+/* Style input fields */
+input,
+textarea {
+  width: unset !important;
+}
+
+span {
+  font-size: 16px !important;
+}
+
+#product-colors-filter {
+  margin-bottom:  30px;
+}
